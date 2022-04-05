@@ -6,7 +6,8 @@
 		<li>icons (иконки)</li>
 		<li>fonts (шрифты)</li>
 		<li>colors.ts (константы с цветами)</li>
-		<li>index.ts (файл с экспортами для всего, что лежит в assets)</li>
+		<li>typographyStyles.ts (шрифты с размерами по стилям использования в приложении)</li>
+		<li>globalStyles.ts (файл с экспортами для иконок и прочего, что лежит в assets)</li>
 	</ul>
 	<li>src</li>
 	<ul>
@@ -14,6 +15,11 @@
 			<ul>
 				<li>atomic (компоненты, являющиеся частями страниц приложения: кнопки, инпуты и тд)</li>
 				<li>pages (готовые экраны)</li>
+			</ul>
+		<li>store</li>
+			<ul>
+				<li>reducers</li>
+				<li>actions</li>
 			</ul>
 	</ul>
 </ul>
