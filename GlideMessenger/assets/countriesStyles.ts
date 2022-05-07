@@ -19,3 +19,25 @@ export enum FLAGS {
     flagUSA = require('./flags/USA.svg'),
     flagVietnam = require('./flags/Vietnam.svg'),
 }
+
+export enum COUNTRIES {
+    AUSTRALIA = 'Australia',
+    ARMENIA = 'Armenia',
+    BELARUS = 'Belarus',
+    BRAZIL = 'Brazil',
+    CANADA = 'Canada',
+    FRANCE = 'France',
+    GERMANY = 'Germany',
+    INDIA = 'India',
+    ITALY = 'Italy',
+    JAPAN = 'Japan',
+    REPUBLIC_OF_CHINA = 'Republic_of_China',
+    RUSSIA = 'Russia',
+    SPAIN = 'Spain',
+    SWITZERLAND = 'Switzerland',
+    TURKEY = 'Turkey',
+    UK = 'UK',
+    UKRAINE = '.Ukraine',
+    USA = 'USA',
+    VIETNAM = 'Vietnam',
+}
