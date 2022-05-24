@@ -14,11 +14,19 @@ export const styles = StyleSheet.create({
         alignItems: 'center', 
         justifyContent: 'center'
     },
-    pageName: {
+    hello: {
         color: 'white',
         fontSize: 32,
         paddingBottom: 10,
+        marginTop: 42,
+        marginBottom: 100,
         textAlign: 'center',
+    },
+    flex: {
+        flexDirection: "row",
+        justifyContent: "center",
+        padding: 15,
+        marginBottom: 10,
     },
     button: {
         paddingBottom: 10,

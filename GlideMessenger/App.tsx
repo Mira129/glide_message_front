@@ -1,30 +1,22 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { MainPage } from './src/components/pages/MainPage/MainPage';
-import { ProfilePage } from './src/components/pages/ProfilePage';
-import { AuthorizationPage } from './src/components/pages/AuthorizationPage/AuthorizationPage';
-import { RegistrationPage1 } from './src/components/pages/RegistrationPage1/RegistrationPage1';
-import { RegistrationPage2 } from './src/components/pages/RegistrationPage2/RegistrationPage2';
-import { CompanionProfilePage } from './src/components/pages/CompanionProfilePage';
-import { TestComponents } from './src/components/pages/TestComponents';
+import React from 'react';
+import { Provider } from 'react-redux';
+import {store} from "./src/store/store"
+import { AuthProvider } from './src/context/AuthContext';
+import { AppNavigator } from './src/components/AppNavigation';
+import { glideType } from './src/components/pages/GlidesListPage/GlidesListPage';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer >
-      <Stack.Navigator initialRouteName="MainPage" screenOptions={{headerShown: false}}> 
-        <Stack.Screen name="RegistrationPage1" component={RegistrationPage1} />
-        <Stack.Screen name="RegistrationPage2" component={RegistrationPage2} />
-        <Stack.Screen name="AuthorizationPage" component={AuthorizationPage} />
-        <Stack.Screen name="MainPage" component={MainPage} />
-        <Stack.Screen name="ProfilePage" component={ProfilePage} />
-        <Stack.Screen name="CompanionProfilePage" component={CompanionProfilePage} />
-        <Stack.Screen name="TestComponents" component={TestComponents} />
-      </Stack.Navigator> 
-    </NavigationContainer>
-        
+      <Provider store={store} >
+ 
+          <AppNavigator></AppNavigator>
+
+    </Provider>
   );
 }
 
@@ -35,18 +27,15 @@ declare global {
 }
 export type RootStackParamList = {
   RegistrationPage1: undefined;
-  RegistrationPage2: undefined;
+  RegistrationPage2: { nickname: string, password: string, fullname: string } | undefined;
   AuthorizationPage: undefined;
-  MainPage: undefined;
+  MainPage: | undefined;
   ProfilePage: undefined;
-  CompanionProfilePage: undefined;
+  BlacklistPage: undefined;
+  GlidesListPage: undefined;
+  ChatsListPage: undefined;
+  CompanionProfilePage: {glide: glideType} | undefined;
   TestComponents: undefined;
+  NewGlideLetterPage: undefined;
+  RecievedGlideLetterPage: {glide: glideType} | undefined;
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     width: Dimensions.get('window').width,
-//     height: Dimensions.get('window').height,
-//   },
-// });
